@@ -14,7 +14,7 @@
 ## 📈 Live Visitor Stats
 
 ![🔢 Visitor Count](https://komarev.com/ghpvc/?username=ziddi-shop&repo=INSTAGRAM-MASS-REPORT-TOOL&color=blue)
-![📊 Live Users](https://counterapi.com/api/visits/ziddi-shop-INSTAGRAM-MASS-REPORT-TOOL)
+![📊 Live Users](https://counterapi.com/c.js?ns=https://github.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/)
 
 ---
 
