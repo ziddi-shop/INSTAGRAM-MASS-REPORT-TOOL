@@ -85,7 +85,7 @@ pip install pyfiglet
 wget https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/main/main.py
 ```
 ```
-python3 reports.py
+python3 main.py
 ```
 
 
