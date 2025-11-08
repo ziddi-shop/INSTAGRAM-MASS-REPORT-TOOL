@@ -1,9 +1,200 @@
-A = '.ninjapy'
-import os, sys, base64 as B
-C = 'aW1wb3J0IG9zCmltcG9ydCBzeXMKaW1wb3J0IHRpbWUKaW1wb3J0IHJhbmRvbQoKCmRlZiBpbnN0YWxsX21pc3NpbmdfcGFja2FnZXMoKToKICAgIHRyeToKICAgICAgICBpbXBvcnQgcmVxdWVzdHMKICAgICAgICBpbXBvcnQgcHlmaWdsZXQKICAgICAgICBmcm9tIG1zNCBpbXBvcnQgSW5mb0lHCiAgICAgICAgZnJvbSByaWNoLmNvbnNvbGUgaW1wb3J0IENvbnNvbGUKICAgICAgICBmcm9tIHJpY2gudGFibGUgaW1wb3J0IFRhYmxlCiAgICAgICAgZnJvbSByaWNoLnRleHQgaW1wb3J0IFRleHQKICAgIGV4Y2VwdCBJbXBvcnRFcnJvcjoKICAgICAgICBwcmludCgiWyFdIEluc3RhbGxpbmcgcmVxdWlyZWQgbW9kdWxlcy4uLiIpCiAgICAgICAgb3Muc3lzdGVtKGYie3N5cy5leGVjdXRhYmxlfSAtbSBwaXAgaW5zdGFsbCByZXF1ZXN0cyBweWZpZ2xldCByaWNoIikKICAgICAgICBvcy5zeXN0ZW0oZiJ7c3lzLmV4ZWN1dGFibGV9IC1tIHBpcCBpbnN0YWxsIG1zNCIpICAKICAgICAgICBvcy5leGVjdihzeXMuZXhlY3V0YWJsZSwgW3N5cy5leGVjdXRhYmxlXSArIHN5cy5hcmd2KSAgCgoKaW5zdGFsbF9taXNzaW5nX3BhY2thZ2VzKCkKCmltcG9ydCByZXF1ZXN0cwppbXBvcnQgcHlmaWdsZXQKZnJvbSByaWNoLmNvbnNvbGUgaW1wb3J0IENvbnNvbGUKZnJvbSByaWNoLnRhYmxlIGltcG9ydCBUYWJsZQpmcm9tIHJpY2gudGV4dCBpbXBvcnQgVGV4dApmcm9tIHNlY3JldHMgaW1wb3J0IHRva2VuX2hleApmcm9tIG1zNCBpbXBvcnQgSW5mb0lHCmZyb20gY29sb3JhbWEgaW1wb3J0IEZvcmUsIFN0eWxlCgoKRSA9ICdcMDMzWzE7MzFtJwpYID0gJ1wwMzNbMTszM20nCkYgPSAnXDAzM1syOzMybScKTSA9ICdceDFiWzE7MzdtJwpCID0gJ1x4MWJbMzg7NTsyMDhtJwpaSURESSA9IHJhbmRvbS5yYW5kaW50KDEwMCwgMzAwKQpPID0gZidceDFiWzM4OzU7e1pJRERJfW0nCgoKYXNjaWlfdGV4dCA9IHB5ZmlnbGV0LmZpZ2xldF9mb3JtYXQoIlpJRERJIikKY29sb3JlZF90ZXh0ID0gIiIKCgpyZWQgPSAiXDAzM1s5MW0iCmJsdWUgPSAiXDAzM1s5NG0iCnJlc2V0ID0gIlwwMzNbMG0iCgpmb3IgaSwgY2hhciBpbiBlbnVtZXJhdGUoYXNjaWlfdGV4dCk6CiAgICBpZiBjaGFyLnN0cmlwKCk6ICAKICAgICAgICBjb2xvcmVkX3RleHQgKz0gcmVkIGlmIGkgJSAyID09IDAgZWxzZSBibHVlCiAgICBjb2xvcmVkX3RleHQgKz0gY2hhcgoKCm9zLnN5c3RlbSgiY2xzIiBpZiBvcy5uYW1lID09ICJudCIgZWxzZSAiY2xlYXIiKQoKCnByaW50KGNvbG9yZWRfdGV4dCArIHJlc2V0KQppbXBvcnQgd2ViYnJvd3NlcgoKCndlYmJyb3dzZXIub3BlbigiaHR0cHM6Ly90Lm1lL25vYmlfc2hvcHMiKQoKYmFubmVyID0gZiIiIntYfXtYfT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PXtYfQp8e0V9WytdIFRvb2wgIDoge0J9IFJlcG9ydCBNYXN0ZXIKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Cnx7RX1bK10gVEcgQ2hhbm5lbCA6IHtCfSAgbm9iaV9zaG9wcyAKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Cnx7RX1bK10gWVQgQ2hhbm5lbCA6IHtCfSAgemlkZGlfc2hvcAp7WH09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gXG4KIiIiCgpmb3IgbGluZSBpbiBiYW5uZXIuc3BsaXRsaW5lcygpOgogICAgdGltZS5zbGVlcCgwLjA1KQogICAgcHJpbnQobGluZSkKCgojIFVzZXIgaW5wdXQKdXNlciA9IGlucHV0KGYnIHtCfSh7RX0xe0J9KSB7WH0gRW50ZXIgVGFyZ2V0IEluc3RhZ3JhbSBVc2VybmFtZXtYfSA6ICAnICsgTykKcHJpbnQoWCArICcg4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQICAnKQpzZXMgPSBpbnB1dChmJyB7Rn0oe0V9MntGfSkge1h9IEVudGVyIFNlc3Npb24gSUR7Rn0gOiAgJyArIE8pCgoKaW1wb3J0IHdlYmJyb3dzZXIKCgp3ZWJicm93c2VyLm9wZW4oImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL0B6aWRkaV9zaG9wIikKIyBHZW5lcmF0ZSBDU1JGIHRva2VuCmNzciA9IHRva2VuX2hleCg4KSAqIDIKY29uc29sZSA9IENvbnNvbGUoKQpiYiA9IDAKZ2cgPSAwCgppZCA9IEluZm9JRy5JbnN0YWdyYW1fSW5mbyh1c2VyKVsnSUQnXQppZiBpZCA9PSAnJzoKICAgIHByaW50KCIgVHJ5IEFnYWluIikKICAgIGV4aXQoMCkKZWxzZToKICAgIHBhc3MKCmNsYXNzIEFnZW50OgogICAgQHN0YXRpY21ldGhvZAogICAgZGVmIHVzZXIoKToKICAgICAgICBpaSA9IFsiMTY1LjEuMC4yOS4xMTkiLCAiMTY2LjAuMC4zMC4xMjAiLCAiMTY3LjAuMC4zMS4xMjEiLCAiMTY4LjAuMC4zMi4xMjIiXQogICAgICAgIGFhID0gewogICAgICAgICAgICAiMjgvOSI6IFsiNzIwZHBpIiwgIjEwODBkcGkiLCAiMTQ0MGRwaSJdLAogICAgICAgICAgICAiMjkvMTAiOiBbIjcyMGRwaSIsICIxMDgwZHBpIiwgIjE0NDBkcGkiLCAiMjE2MGRwaSJdLAogICAgICAgICAgICAiMzAvMTEiOiBbIjEwODBkcGkiLCAiMTQ0MGRwaSIsICIyMTYwZHBpIl0sCiAgICAgICAgICAgICIzMS8xMiI6IFsiMTQ0MGRwaSIsICIyMTYwZHBpIl0KICAgICAgICB9CiAgICAgICAgc3MgPSB7CiAgICAgICAgICAgICI3MjBkcGkiOiBbIjEyODB4NzIwIiwgIjE5MjB4MTA4MCJdLAogICAgICAgICAgICAiMTA4MGRwaSI6IFsiMTkyMHgxMDgwIiwgIjI1NjB4MTQ0MCIsICIzODQweDIxNjAiXSwKICAgICAgICAgICAgIjE0NDBkcGkiOiBbIjI1NjB4MTQ0MCIsICIzODQweDIxNjAiXSwKICAgICAgICAgICAgIjIxNjBkcGkiOiBbIjM4NDB4MjE2MCIsICI3NjgweDQzMjAiXQogICAgICAgIH0KICAgICAgICBkZCA9IHsKICAgICAgICAgICAgInNhbXN1bmciOiBbIlNNLVQyOTIiLCAiU00tRzk3M0YiLCAiU00tQTUxNUYiXSwKICAgICAgICAgICAgImdvb2dsZSI6IFsiUGl4ZWwgNCIsICJQaXhlbCA1Il0sCiAgICAgICAgICAgICJodWF3ZWkiOiBbIlAzMCBQcm8iLCAiTWF0ZSA0MCBQcm8iXSwKICAgICAgICAgICAgInhpYW9taSI6IFsiTWkgMTAiLCAiUmVkbWkgTm90ZSAxMCJdLAogICAgICAgICAgICAib25lcGx1cyI6IFsiOFQiLCAiOSBQcm8iXSwKICAgICAgICAgICAgInNvbnkiOiBbIlhaMiIsICJYcGVyaWEgMSJdCiAgICAgICAgfQogICAgICAgIGNjID0gWyJxY29tIiwgImV4eW5vcyIsICJraXJpbiIsICJtZWRpYXRlayIsICJhcHBsZSJdCiAgICAgICAgbGFuID0gWyJlbl9VUyIsICJlc19FUyIsICJmcl9GUiIsICJkZV9ERSIsICJ6aF9DTiIsICJqYV9KUCIsICJrb19LUiJdCiAgICAgICAgZHAgPSBbInBob25lIiwgInRhYmxldCIsICJ3YXRjaCIsICJ0diIsICJjYXIiXQogICAgICAgIGFybSA9IFsiYXJtNjRfdjhhIiwgImFybWVhYmktdjdhIiwgIng4NiIsICJ4ODZfNjQiXQogICAgICAgIGNvbWIgPSBbInNhbXN1bmciLCAiZ29vZ2xlIiwgImh1YXdlaSIsICJ4aWFvbWkiLCAib25lcGx1cyIsICJzb255Il0KCiAgICAgICAgc29zID0gcmFuZG9tLmNob2ljZShsaXN0KGFhLmtleXMoKSkpCiAgICAgICAgdmxvID0gcmFuZG9tLmNob2ljZShhYVtzb3NdKQogICAgICAgIGxvcCA9IHJhbmRvbS5jaG9pY2Uoc3NbdmxvXSkKICAgICAgICBraSA9IHJhbmRvbS5jaG9pY2UoY29tYikKICAgICAgICBtbyA9IHJhbmRvbS5jaG9pY2UoZGQuZ2V0KGtpLCBbIlVua25vd24iXSkpCgogICAgICAgIHVzZXJfYWdlbnQgPSAoCiAgICAgICAgICAgIGYiSW5zdGFncmFtIHtyYW5kb20uY2hvaWNlKGlpKX0gQW5kcm9pZCAiCiAgICAgICAgICAgIGYiKHtzb3N9OyB7dmxvfTsge2xvcH07IHtraX07IHttb307ICIKICAgICAgICAgICAgZiJ7cmFuZG9tLmNob2ljZShhcm0pfTsge3JhbmRvbS5jaG9pY2UoZHApfTsgIgogICAgICAgICAgICBmIntyYW5kb20uY2hvaWNlKGxhbil9OyB7cmFuZG9tLmNob2ljZShjYyl9KSIKICAgICAgICApCgogICAgICAgIHJldHVybiB1c2VyX2FnZW50CgoKYWdlbnQgPSBBZ2VudC51c2VyKCkKY29va2llcz17J3Nlc3Npb25pZCc6IHNlc30KaGVhZGVycz17J2F1dGhvcml0eSc6ICd3d3cuaW5zdGFncmFtLmNvbScsJ2FjY2VwdCc6ICcqLyonLCdhY2NlcHQtbGFuZ3VhZ2UnOiAnYXItRUcsYXI7cT0wLjksZW4tVVM7cT0wLjgsZW47cT0wLjcnLCdjb250ZW50LXR5cGUnOiAnYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkJywnb3JpZ2luJzogJ2h0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20nLCdyZWZlcmVyJzogZidodHRwczovL3d3dy5pbnN0YWdyYW0uY29tL3t1c2VyfScsJ3NlYy1jaC1wcmVmZXJzLWNvbG9yLXNjaGVtZSc6ICdsaWdodCcsJ3NlYy1jaC11YSc6ICciTm90LUEuQnJhbmQiO3Y9Ijk5IiwgIkNocm9taXVtIjt2PSIxMjQiJywnc2VjLWNoLXVhLWZ1bGwtdmVyc2lvbi1saXN0JzogJyJOb3QtQS5CcmFuZCI7dj0iOTkuMC4wLjAiLCAiQ2hyb21pdW0iO3Y9IjEyNC4wLjYzMjcuNCInLCdzZWMtY2gtdWEtbW9iaWxlJzogJz8xJywnc2VjLWNoLXVhLW1vZGVsJzogJyIyMzEyN1BOMENDIicsJ3NlYy1jaC11YS1wbGF0Zm9ybSc6ICciQW5kcm9pZCInLCdzZWMtY2gtdWEtcGxhdGZvcm0tdmVyc2lvbic6ICciMTEuMC4wIicsJ3NlYy1mZXRjaC1kZXN0JzogJ2VtcHR5Jywnc2VjLWZldGNoLW1vZGUnOiAnY29ycycsJ3NlYy1mZXRjaC1zaXRlJzogJ3NhbWUtb3JpZ2luJywndXNlci1hZ2VudCc6IGFnZW50LCd4LWFzYmQtaWQnOiAnMTI5NDc3JywneC1jc3JmdG9rZW4nOiBjc3IsJ3gtaWctYXBwLWlkJzogJzEyMTc5ODE2NDQ4Nzk2MjgnLCd4LWlnLXd3dy1jbGFpbSc6ICdobWFjLkFSMkJ5bzViUm02X2l6b0xfOWVJUGFVc1BmZUwyZVktNDd0azR1VnRjSXE0MUJNbicsJ3gtaW5zdGFncmFtLWFqYXgnOiAnMTAxNjI3MjI5NCcsJ3gtcmVxdWVzdGVkLXdpdGgnOiAnWE1MSHR0cFJlcXVlc3QnLH0KCm5vayA9IHsKICAgICdjb250YWluZXJfbW9kdWxlJzogJ3Byb2ZpbGVQYWdlJywKICAgICdlbnRyeV9wb2ludCc6ICcxJywKICAgICdsb2NhdGlvbic6ICcyJywKICAgICdvYmplY3RfaWQnOiBpZCwKICAgICdvYmplY3RfdHlwZSc6ICc1JywKICAgICdmcnhfcHJvbXB0X3JlcXVlc3RfdHlwZSc6ICcxJywKfQoKdHJ5OgogIGNvbiA9IHJlcXVlc3RzLnBvc3QoCiAgICAnaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9hcGkvdjEvd2ViL3JlcG9ydHMvZ2V0X2ZyeF9wcm9tcHQvJywKICAgIGNvb2tpZXM9Y29va2llcywKICAgIGhlYWRlcnM9aGVhZGVycywKICAgIGRhdGE9bm9rLAopLmpzb24oKVsncmVzcG9uc2UnXVsnY29udGV4dCddCmV4Y2VwdDoKICAgIHByaW50KCJIYXRhIFNlc3Npb25JZCBMw7x0ZmVuIFRla3JhciBEZW5leWluIikKICAgIGV4aXQoMCkKCgpkYXRhID0gewogICAgJ2NvbnRhaW5lcl9tb2R1bGUnOiAncHJvZmlsZVBhZ2UnLAogICAgJ2VudHJ5X3BvaW50JzogJzEnLAogICAgJ2xvY2F0aW9uJzogJzInLAogICAgJ29iamVjdF9pZCc6IGlkLAogICAgJ29iamVjdF90eXBlJzogJzUnLAogICAgJ2NvbnRleHQnOiBjb24sCiAgICAnc2VsZWN0ZWRfdGFnX3R5cGVzJzogJ1sicHJvc3RpdHV0aW9uIl0nLAogICAgJ2FjdGlvbl90eXBlJzogJzInLAogICAgJ2ZyeF9wcm9tcHRfcmVxdWVzdF90eXBlJzogJzInLAp9CndoaWxlIFRydWU6CiAgdGltZS5zbGVlcCg3KQogIHJlcyA9IHJlcXVlc3RzLnBvc3QoCiAgICAnaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9hcGkvdjEvd2ViL3JlcG9ydHMvZ2V0X2ZyeF9wcm9tcHQvJywKICAgIGNvb2tpZXM9Y29va2llcywKICAgIGhlYWRlcnM9aGVhZGVycywKICAgIGRhdGE9ZGF0YSwKKS50ZXh0CiAgaWYgJyJzdGF0dXMiOiJvayInIGluIHJlczoKICAgICAgZ2cgKz0gMQogICAgICBvcy5zeXN0ZW0oJ2NsZWFyJykKICAgICAgdGFibGUgPSBUYWJsZSh0aXRsZT0iSW5zdGFncmFtIFJlcG9ydGVyIikKICAgICAgdGFibGUuYWRkX2NvbHVtbigiVHlwZSIsIGp1c3RpZnk9ImNlbnRlciIsIHN0eWxlPSJjeWFuIiwgbm9fd3JhcD1UcnVlKQogICAgICB0YWJsZS5hZGRfY29sdW1uKCJDb3VudCIsIGp1c3RpZnk9ImNlbnRlciIsIHN0eWxlPSJtYWdlbnRhIikKICAgICAgdGFibGUuYWRkX3JvdygiRG9uZVJlcG9ydCIsIHN0cihnZyksIHN0eWxlPSJncmVlbiIpCiAgICAgIHRhYmxlLmFkZF9yb3coIkJhZFJlcG9ydCIsIHN0cihiYiksIHN0eWxlPSJyZWQiKSAgIAogICAgICB0YWJsZS5hZGRfcm93KCJVc2VybmFtZSIsIHVzZXIsIHN0eWxlPSJ3aGl0ZSIpCiAgICAgIHRhYmxlLmFkZF9yb3coIkRldiIsICJAbm9iaV9zaG9wcyIpCiAgICAgIGNvbnNvbGUucHJpbnQodGFibGUpCiAgZWxzZToKICAgICAgYmIgKz0gMQogICAgICBvcy5zeXN0ZW0oJ2NsZWFyJykKICAgICAgdGFibGUgPSBUYWJsZSh0aXRsZT0iSW5zdGFncmFtIFJlcG9ydGVyIikKICAgICAgdGFibGUuYWRkX2NvbHVtbigiVHlwZSIsIGp1c3RpZnk9ImNlbnRlciIsIHN0eWxlPSJjeWFuIiwgbm9fd3JhcD1UcnVlKQogICAgICB0YWJsZS5hZGRfY29sdW1uKCJDb3VudCIsIGp1c3RpZnk9ImNlbnRlciIsIHN0eWxlPSJtYWdlbnRhIikKICAgICAgdGFibGUuYWRkX3JvdygiRG9uZVJlcG9ydCIsIHN0cihnZyksIHN0eWxlPSJncmVlbiIpCiAgICAgIHRhYmxlLmFkZF9yb3coIkJhZFJlcG9ydCIsIHN0cihiYiksIHN0eWxlPSJyZWQiKSAgIAogICAgICB0YWJsZS5hZGRfcm93KCJVc2VybmFtZSIsIHVzZXIsIHN0eWxlPSJ3aGl0ZSIpCiAgICAgIHRhYmxlLmFkZF9yb3coIkRldiIsICJAbm9iaV9zaG9wcyIpCiAgICAgIGNvbnNvbGUucHJpbnQodGFibGUp'
-try:
-    with open(A, 'wb') as D:D.write(B.b64decode(C))
-    os.system('python3 .ninjapy'+' '.join(sys.argv[1:]))
-except Exception as E:print(E)
-finally:
-    if os.path.exists(A):os.remove(A)
+import requests
+import os
+import json
+import pyfiglet,time
+try :
+  import pyfiglet
+except ImportError:
+  os.system ("pip install pyfiglet")
+  
+try :
+  
+  import requests
+
+except ImportError:
+  
+  os.system ("pip install requests")
+os.system ("clear")
+rs = requests.session()
+R = "\033[1;31m"
+G = "\033[1;32m"
+B = "\033[0;94m"
+Y = "\033[1;33m"
+nu = 0
+n = 0
+br = pyfiglet.figlet_format("Reports")
+print(B+br)
+print('''
+[Send automatic reports to Instagram]
+
+Coded By : META_SERVER
+________________________________________
+''')
+print(Y+"Log in to your Instagram account:")
+print("")     
+username = input("your username :")
+password = input("your password :")
+Target = input("Target Id (username) :")
+url = 'https://www.instagram.com/accounts/login/ajax/'
+headers = {
+     'accept': '*/*',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'ar,en-US;q=0.9,en;q=0.8',
+    'content-length': '275',
+    'content-type': 'application/x-www-form-urlencoded',
+    'cookie': 'csrftoken=DqBQgbH1p7xEAaettRA0nmApvVJTi1mR; ig_did=C3F0FA00-E82D-41C4-99E9-19345C41EEF2; mid=X8DW0gALAAEmlgpqxmIc4sSTEXE3; ig_nrcb=1',
+    'origin': 'https://www.instagram.com',
+    'referer': 'https://www.instagram.com/',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Mobile Safari/537.36',
+    'x-csrftoken': 'DqBQgbH1p7xEAaettRA0nmApvVJTi1mR',
+    'x-ig-app-id': '936619743392459',
+    'x-ig-www-claim': '0',
+    'x-instagram-ajax': 'bc3d5af829ea',
+    'x-requested-with': 'XMLHttpRequest'
+    }
+data = {
+         'username': f'{username}',
+         'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:1589682409:{password}',
+         'queryParams': '{}',
+         'optIntoOneTap': 'false'
+    }    
+r = rs.post(url, headers=headers, data=data)
+if  'authenticated":true' in r.text or 'userId' in r.text:
+    rs.headers.update({'X-CSRFToken': r.cookies['csrftoken']})
+    print("")
+    print ("\033[92m Login Successful ✓")
+    print ("")
+    os.system ("xdg-open https://www.facebook.com/darkhunter141/")
+    print(G+"*"*25)	
+    print("")
+    print(G+"Login :"+username)
+    try:
+        u = rs.get(f"https://www.instagram.com/{Target}/?__a=1")
+        id =  str(u.json()["graphql"]["user"]["id"])
+        print(G+"Target : "+f"{Target} : {id}")
+        print("")
+        print(G+"*"*25)
+    except:
+    	print(R+"[!]Check the victim's account")
+    	exit()
+    print(R+"""
+Choose the type of report :	
+[1] - spam
+[2] - violence
+[3] - Impersonation
+[4] - Sexual activity
+[5] - harassment
+[6] - Self-harm
+[7] - Hate on
+BY - META_SERVER
+
+    """)
+    xx = int(input("Enter the report number :"))
+    print('_'*30)
+    print("")
+    if xx == 1:
+    	P1= int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_1 in range(P1):
+    		url_1=f'https://www.instagram.com/users/{id}/report/'
+    		data_1={'source_name':'','reason_id':'1','frx_context':''}
+    		report_1=rs.post(url_1,data=data_1)
+    		if '"status":"ok"' in report_1.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)
+    		
+    elif xx == 2:
+    	P2 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait (sec ):"))
+    	print('-'*30)
+    	for i_2 in range(P2):
+    		url_2=f'https://www.instagram.com/users/{id}/report/'
+    		data_2={'source_name':'','reason_id':'5','frx_context':''}
+    		report_2=rs.post(url_2,data=data_2)
+    		if '"status":"ok"' in report_2.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)
+    elif xx == 3:
+    	P3 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_3 in range(P3):
+    		url_3=f'https://www.instagram.com/users/{id}/report/'
+    		data_3={'source_name':'','reason_id':'8','frx_context':''}
+    		report_3=rs.post(url_3,data=data_3)
+    		if '"status":"ok"' in report_3.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)
+    elif xx == 4:
+    	P4 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_4 in range(P4):
+    		url_4=f'https://www.instagram.com/users/{id}/report/'
+    		data_4={'source_name':'','reason_id':'4','frx_context':''}
+    		report_4=rs.post(url_4,data=data_4)
+    		if '"status":"ok"' in report_4.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)	
+    elif xx == 5:
+    	P5 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_5 in range(P5):
+    		url_5=f'https://www.instagram.com/users/{id}/report/'
+    		data_5={'source_name':'','reason_id':'7','frx_context':''}
+    		report_5=rs.post(url_5,data=data_5)
+    		if '"status":"ok"' in report_5.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)    		
+    elif xx == 6:
+    	P6 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_6 in range(P6):
+    		url_6=f'https://www.instagram.com/users/{id}/report/'
+    		data_6={'source_name':'','reason_id':'2','frx_context':''}
+    		report_6=rs.post(url_6,data=data_6)
+    		if '"status":"ok"' in report_6.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)
+    elif xx == 7:
+    	P7 = int(input(Y+"How many reports :"))
+    	tu = int(input("time wait :"))
+    	print('-'*30)
+    	for i_7 in range(P7):
+    		url_7=f'https://www.instagram.com/users/{id}/report/'
+    		data_7={'source_name':'','reason_id':'6','frx_context':''}
+    		report_7=rs.post(url_7,data=data_7)
+    		if '"status":"ok"' in report_7.text:
+    			nu += 1
+    		else:
+    			n += 1
+    		print(G+f"\rSent = {nu}  {R}Error ={n}",end="")
+    		time.sleep(tu)		
+elif ('{"message":"checkpoint_required"') in r.text:
+	print(R+"[!]checkpoint")
+else:
+	print(R+"Error, Try again")
