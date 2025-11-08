@@ -20,6 +20,12 @@
 </h2>
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=♦+𝙿𝙾𝚆𝙴𝚁𝙳+𝙱𝚈+𝐙𝐈𝐃𝐃𝐈+🎭">
 
+<p align="center"><img src="logo.png" width="150px" height="150px" alt="insta logo"></p>
+
+<img align="right" alt="count" src="https://count.getloli.com/get/@ziddi-shop?theme=shop">
+    
+<h1 align="center">INSTAGRAM MASS REPORT</h1>
+
 🚀 **Automated Instagram Reporting Tool** – Report Instagram accounts in bulk using Python.
 
 ## 📌 Features
@@ -49,7 +55,7 @@ INSTAGRAM-MASS-REPORT-TOOL/
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL.git
+git clone https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/main/main.py
 cd INSTAGRAM-MASS-REPORT-TOOL
 ```
 
@@ -63,11 +69,35 @@ pip install requests rich pyfiglet colorama ms4
 ```sh
 python main.py
 ```
+## 🛠️ Installation 2
 
-## 🔧 Configuration
-- **Session ID**: Required for authentication (extract it from browser cookies).
-- **Target Username**: Enter the Instagram username to report.
-- **Delays**: Added to mimic human behavior.
+```
+sudo apt-get update -y
+```
+
+```
+sudo apt-get upgrade -y
+```
+```
+apt install wget -y
+```
+```
+apt install python -y
+```
+```
+pip install requests
+```
+```
+pip install pyfiglet
+```
+```
+wget https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/main/main.py
+```
+```
+python3 reports.py
+```
+
+
 
 ## 📜 License
 📢 **This project is for educational purposes only. Use it responsibly.**
