@@ -1,72 +1,167 @@
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-<h2 align="center">
-    ─「INSTAGRAM MASS REPORT TOOL」─
-</h2>
-<img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=♦+𝙿𝙾𝚆𝙴𝚁𝙳+𝙱𝚈+𝐙𝐈𝐃𝐃𝐈+🎭">
-<p align="center"><img src="logo.png" width="150px" height="150px" alt="insta logo"></p>
-<img align="right" alt="count" src="https://count.getloli.com/get/@ziddi-shop?theme=shop">
-    
-<h1 align="center">INSTAGRAM MASS REPORT</h1>
-🚀 **Automated Instagram Reporting Tool** – Report Instagram accounts in bulk using Python.
-## 📌 Features
-- 🔥 Mass Instagram reporting automation
-- 🔑 Uses session-based authentication
-- ⏳ Randomized delays to avoid detection
-- 🖥️ Simple and easy-to-use CLI interface
+<div align="center">
+
+# 🚨 INSTAGRAM MASS REPORT TOOL
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=700&lines=Instagram+Mass+Report+Tool;Python+Automation;Powered+by+ZIDDI" alt="Typing SVG"/>
+
+<img src="logo.png" width="170" alt="Logo"/>
+
+<p>
+<img src="https://img.shields.io/github/stars/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL?style=for-the-badge&color=yellow">
+<img src="https://img.shields.io/github/forks/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL?style=for-the-badge&color=blue">
+<img src="https://img.shields.io/github/license/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL?style=for-the-badge&color=green">
+<img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python">
+</p>
+
+<img align="right" src="https://count.getloli.com/get/@ziddi-shop?theme=shop"/>
+
+### ⚡ Powered by ZIDDI
+
+Simple • Fast • Terminal Based
+
+</div>
+
 ---
-## ⚠️ Disclaimer
-🚨 **This tool is strictly for educational and research purposes only.** Misuse is **strictly prohibited**. The author holds **no responsibility** for any unintended use.
-## 📂 Project Structure
-```
+
+# 📖 About
+
+This repository contains a Python-based command-line application designed to demonstrate automation techniques and terminal interface design.
+
+---
+
+# ✨ Features
+
+- 🎨 Beautiful CLI Interface
+- ⚡ Fast & Lightweight
+- 🔑 Session-Based Login
+- 🎲 Randomized Delay Support
+- 📦 Easy Installation
+- 🐍 Pure Python
+- 💻 Cross Platform Support
+- 🛠 Beginner Friendly
+
+---
+
+# 📂 Project Structure
+
+```text
 INSTAGRAM-MASS-REPORT-TOOL/
-├── main.py   # Main script
-├── README.md # Documentation
-├── LICENSE   # LICENSE
+│
+├── main.py
+├── README.md
+├── LICENSE
+└── logo.png
 ```
-## 🛠️ Installation & Usage
-### 1️⃣ Clone the Repository
-```sh
-git clone https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/main/main.py
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL.git
+```
+
+```bash
 cd INSTAGRAM-MASS-REPORT-TOOL
 ```
-### 2️⃣ Install Dependencies
-Ensure you have Python installed, then install required modules:
-```sh
+
+---
+
+## Install Requirements
+
+```bash
 pip install requests rich pyfiglet colorama ms4
 ```
-### 3️⃣ Run the Script
-```sh
+
+---
+
+## Run
+
+```bash
 python main.py
 ```
-## 🛠️ Installation 2
-```
-sudo apt-get update -y
-```
-```
-sudo apt-get upgrade -y
-```
-```
-apt install wget -y
-```
-```
-apt install python -y
-```
-```
-pip install requests
-```
-```
-pip install pyfiglet
-```
-```
-wget https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/main/main.py
-```
-```
+
+or
+
+```bash
 python3 main.py
 ```
-## 📜 License
-📢 **This project is for educational purposes only. Use it responsibly.**
----
-### 🤝 Connect with Us
-- 📌 **Author:** [Ziddi Shop](https://t.me/nobi_shops)
-- 📢 **Need Help?** Join our Telegram: [nobi_shops](https://t.me/nobi_shops)
 
+---
+
+# 🐧 Linux Installation
+
+```bash
+sudo apt update -y
+sudo apt upgrade -y
+
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+
+pip3 install requests rich pyfiglet colorama ms4
+
+git clone https://github.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL.git
+
+cd INSTAGRAM-MASS-REPORT-TOOL
+
+python3 main.py
+```
+
+---
+
+# 📋 Requirements
+
+- Python 3.9+
+- pip
+- Internet Connection
+
+---
+
+# 📸 Preview
+
+```
+███████╗██╗██████╗ ██████╗ ██╗
+╚══███╔╝██║██╔══██╗██╔══██╗██║
+  ███╔╝ ██║██║  ██║██║  ██║██║
+ ███╔╝  ██║██║  ██║██║  ██║██║
+███████╗██║██████╔╝██████╔╝██║
+╚══════╝╚═╝╚═════╝ ╚═════╝ ╚═╝
+```
+
+---
+
+# ⚠️ Disclaimer
+
+> This repository is provided **strictly for educational and research purposes only.**
+>
+> Users are solely responsible for ensuring that their use complies with all applicable laws, platform terms of service, and ethical guidelines.
+>
+> The author assumes **no responsibility or liability** for misuse or any consequences arising from the use of this project.
+
+---
+
+# 📜 License
+
+Licensed under the MIT License.
+
+See the **LICENSE** file for more information.
+
+---
+
+# 👨‍💻 Author
+
+**ZIDDI**
+
+Telegram: https://t.me/ziddishop
+
+---
+
+<div align="center">
+
+### ⭐ If you like this project, don't forget to Star the Repository!
+
+Made with ❤️ by **ZIDDI**
+
+</div>
