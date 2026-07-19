@@ -81,10 +81,3 @@ The developer is not responsible for any consequences resulting from misuse.
 - 📌 **Author:** [Ziddi Shop](https://t.me/ziddishop)
 - 📢 **Need Help?** Join our Telegram: [metaserverx](https://t.me/metaserverx)
 
-
-
----
-
-If you also need to modify the `main.py` file to include the password check (`ZIDDISHOP`), let me know and I can provide that code snippet as well.
-
-
