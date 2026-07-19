@@ -63,21 +63,10 @@ wget https://raw.githubusercontent.com/ziddi-shop/INSTAGRAM-MASS-REPORT-TOOL/mai
 ```
 python3 main.py
 ```
-
-⚠️ Important Warnings
-Do not use this tool on accounts you do not own.
-
-Instagram actively monitors reporting activity; excessive reports may lead to account suspension.
-
-Use a VPN and rotate user‑agents to minimise fingerprinting.
-
-The developer is not responsible for any consequences resulting from misuse.
-
-
 ## 📜 License
 📢 **This project is for educational purposes only. Use it responsibly.**
 ---
 ### 🤝 Connect with Us
-- 📌 **Author:** [Ziddi Shop](https://t.me/ziddishop)
-- 📢 **Need Help?** Join our Telegram: [metaserverx](https://t.me/metaserverx)
+- 📌 **Author:** [Ziddi Shop](https://t.me/nobi_shops)
+- 📢 **Need Help?** Join our Telegram: [nobi_shops](https://t.me/nobi_shops)
 
