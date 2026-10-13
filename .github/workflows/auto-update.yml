@@ -2,7 +2,7 @@ name: Auto Update
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -11,17 +11,18 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Update File
-        run: echo "$(date)" > update.txt
+      - name: Update Timestamp
+        run: |
+          date -u +"Last auto update: %Y-%m-%d %H:%M:%S UTC" > LAST_UPDATE.txt
 
-      - name: Commit
+      - name: Push Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add update.txt
-          git commit -m "Auto Update" || exit 0
+          git add LAST_UPDATE.txt
+          git diff --cached --quiet || git commit -m "Automatic update"
           git push
