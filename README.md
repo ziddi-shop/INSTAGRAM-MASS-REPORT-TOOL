@@ -104,7 +104,7 @@ py -m pip install instagrapi
 **Step 4 — Start the tool**
 
 ```bash
-py main.py
+py main-obf.py
 ```
 
 Ensure all required project files and the matching PyArmor runtime are present.
@@ -135,7 +135,7 @@ python -m pip install instagrapi
 **Step 4 — Start the tool**
 
 ```bash
-python main.py
+python main-obf.py
 ```
 
 **Important:** A PyArmor runtime built for Windows will not automatically work on Android. Termux requires a compatible runtime and build for its platform. Copying Windows runtime files to Termux is not sufficient.
@@ -173,7 +173,7 @@ python -m pip install instagrapi
 **Step 5 — Start the tool**
 
 ```bash
-python main.py
+python main-obf.py
 ```
 
 ---
