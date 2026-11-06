@@ -77,7 +77,7 @@ def main():
 """ + RESET)
 
     print(YELLOW + "  THIS TOOL IS PAID." + RESET)
-    print(WHITE + "  Do you want to purchase this tool?" + RESET)
+    print(WHITE + "  Do you want to purchase this tool? price - 50$ fixed" + RESET)
 
     while True:
         choice = input(
