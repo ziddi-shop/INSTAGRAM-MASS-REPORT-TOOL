@@ -5,7 +5,7 @@ import webbrowser
 from urllib.parse import quote
 
 USERNAME = "fadingwithher"
-MESSAGE = "Hello! I want to purchase META SERVER PREMIUM ACCESS for $50. Please share the payment details."
+MESSAGE = "Hello! I want to purchase Insta Mass Report Tool for $50. Please share the payment details."
 
 URL = f"https://t.me/{USERNAME}?text={quote(MESSAGE)}"
 
