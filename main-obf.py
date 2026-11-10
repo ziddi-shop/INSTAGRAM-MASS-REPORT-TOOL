@@ -1,13 +1,14 @@
-
 import os
 import sys
 import time
 import webbrowser
-import random
+from urllib.parse import quote
 
-URL = "t.me/fadingwithher"
+USERNAME = "fadingwithher"
+MESSAGE = "Hello! I want to purchase META SERVER PREMIUM ACCESS for $50. Please share the payment details."
 
-# Terminal Colors
+URL = f"https://t.me/{USERNAME}?text={quote(MESSAGE)}"
+
 CYAN = "\033[96m"
 GREEN = "\033[92m"
 PURPLE = "\033[95m"
@@ -26,16 +27,12 @@ def progress():
     for i in range(101):
         filled = i // 5
         bar = "█" * filled + "░" * (20 - filled)
-        print(
-            f"\r  {CYAN}[{bar}] {i}%{RESET}",
-            end="", flush=True
-        )
+        print(f"\r  {CYAN}[{bar}] {i}%{RESET}", end="", flush=True)
         time.sleep(0.025)
     print()
 
 def banner():
     os.system("cls" if os.name == "nt" else "clear")
-
     print(CYAN + r"""
 ███╗   ███╗███████╗████████╗ █████╗
 ████╗ ████║██╔════╝╚══██╔══╝██╔══██╗
@@ -54,13 +51,10 @@ def main():
 
     slow("\n  [BOOT] Initializing META SERVER...")
     time.sleep(0.4)
-
     slow("  [SYS] Loading core components...")
     time.sleep(0.4)
-
     slow("  [NET] Preparing Telegram connection...")
     time.sleep(0.4)
-
     slow("  [AUTH] Checking premium access...")
     time.sleep(0.5)
 
@@ -77,30 +71,25 @@ def main():
 """ + RESET)
 
     print(YELLOW + "  THIS TOOL IS PAID." + RESET)
-    print(WHITE + "  Do you want to purchase this tool? price - 50$ fixed" + RESET)
+    print(WHITE + "  Price: $50 FIXED" + RESET)
 
     while True:
-        choice = input(
-            "\n  PURCHASE ACCESS? (YES/NO): "
-        ).strip().upper()
+        choice = input("\n  PURCHASE ACCESS? (YES/NO): ").strip().upper()
 
         if choice in ("YES", "Y"):
-            print(GREEN + "\n  [SUCCESS] Purchase request accepted!" + RESET)
-            slow("  [LAUNCH] Opening META SERVER BOT...")
+            print(GREEN + "\n  [SUCCESS] Purchase request initiated!" + RESET)
+            slow("  [LAUNCH] Opening Telegram purchase chat...")
             time.sleep(0.5)
 
-            opened = webbrowser.open(URL)
-
-            if opened:
-                print(GREEN + "\n  [SUCCESS] Telegram link opened ✓" + RESET)
+            if webbrowser.open(URL):
+                print(GREEN + "\n  [SUCCESS] Telegram chat opened ✓" + RESET)
+                print(CYAN + "  [INFO] Purchase message pre-filled." + RESET)
             else:
-                print(RED + "\n  [ERROR] Could not open browser." + RESET)
-
+                print(RED + "\n  [ERROR] Could not open Telegram link." + RESET)
             break
 
         elif choice in ("NO", "N"):
             print(RED + "\n  [DENIED] Purchase cancelled." + RESET)
-            print(WHITE + "  Access request terminated." + RESET)
             break
 
         else:
